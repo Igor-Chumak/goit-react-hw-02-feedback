@@ -1,0 +1,17 @@
+[
+  {
+    "name": "good",
+    "value": 1,
+    "button": "Good"
+  },
+  {
+    "name": "neutral",
+    "value": 2,
+    "button": "Neutral"
+  },
+  {
+    "name": "bad",
+    "value": 2,
+    "button": "Bad"
+  }
+]
