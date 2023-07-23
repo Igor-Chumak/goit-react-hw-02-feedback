@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Container, Section } from 'components';
 
 export class App extends Component {
   state = {
@@ -9,9 +10,11 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
-        <h2> Please leave feedback </h2>
-      </div>
+      <Section>
+        <Container>
+          <h2> Please leave feedback </h2>
+        </Container>
+      </Section>
     );
   }
 }
