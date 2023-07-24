@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Container, Section } from 'components';
+import { Container, Section, CreateThemeSwitcher } from 'components';
 import typeFeedbacks from 'data/type_feedback.json';
 
 console.log(typeFeedbacks);
@@ -13,15 +13,25 @@ export class App extends Component {
     // good: 0,
     // neutral: 0,
     // bad: 0,
+    isNightTheme: false,
+  };
+
+  handleToggleTheme = () => {
+    this.setState(prevState => {
+      return { isNightTheme: !prevState.isNightTheme };
+    });
   };
 
   render() {
     return (
-      <Section>
-        <Container>
-          <h2> Please leave feedback </h2>
-        </Container>
-      </Section>
+      <main>
+        <Section>
+          <Container>
+            <CreateThemeSwitcher handleToggleTheme={this.handleToggleTheme} />
+            <h2> Please leave feedback </h2>
+          </Container>
+        </Section>
+      </main>
     );
   }
 }

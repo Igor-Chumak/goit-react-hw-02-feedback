@@ -7,3 +7,4 @@ export * from 'components/ButtonList/ButtonList';
 export * from 'components/ButtonList/ButtonList.styled.jsx';
 export * from 'components/Statistics/Statistics';
 export * from 'components/Statistics/Statistics.styled.jsx';
+export * from 'components/CreateThemeSwitcher/CreateThemeSwitcher';
