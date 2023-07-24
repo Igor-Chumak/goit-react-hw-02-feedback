@@ -2,16 +2,19 @@
   {
     "name": "good",
     "value": 1,
-    "button": "Good"
+    "button": "Good",
+    "btnColor": "green"
   },
   {
     "name": "neutral",
     "value": 2,
-    "button": "Neutral"
+    "button": "Neutral",
+    "btnColor": "yellow"
   },
   {
     "name": "bad",
     "value": 3,
-    "button": "Bad"
+    "button": "Bad",
+    "btnColor": "red"
   }
 ]
