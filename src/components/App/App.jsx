@@ -27,7 +27,10 @@ export class App extends Component {
       <>
         <header>
           <Container>
-            <CreateThemeSwitcher handleToggleTheme={this.handleToggleTheme} />
+            <CreateThemeSwitcher
+              handleToggleTheme={this.handleToggleTheme}
+              isNightTheme={this.state.isNightTheme}
+            />
           </Container>
         </header>
         <main>
