@@ -1,11 +1,18 @@
 import { Component } from 'react';
 import { Container, Section } from 'components';
+import typeFeedbacks from 'data/type_feedback.json';
+
+console.log(typeFeedbacks);
+const shape = {};
+typeFeedbacks.map(({ name, value }) => (shape[name] = value));
+console.log('shape: ', shape);
 
 export class App extends Component {
   state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+    ...shape,
+    // good: 0,
+    // neutral: 0,
+    // bad: 0,
   };
 
   render() {
