@@ -10,8 +10,8 @@ export class CreateThemeSwitcher extends Component {
 
   render() {
     return (
-      <div>
-        <span className={style.noteWrapper}>Night:</span>
+      <div className={style.switchBox}>
+        <span className={style.noteWrapper}>Night</span>
         <label className={style.switch}>
           <input type="checkbox" onChange={this.props.handleToggleTheme} />
           <span className={style.slider}></span>

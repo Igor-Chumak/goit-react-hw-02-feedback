@@ -24,14 +24,20 @@ export class App extends Component {
 
   render() {
     return (
-      <main>
-        <Section>
+      <>
+        <header>
           <Container>
             <CreateThemeSwitcher handleToggleTheme={this.handleToggleTheme} />
-            <h2> Please leave feedback </h2>
           </Container>
-        </Section>
-      </main>
+        </header>
+        <main>
+          <Section>
+            <Container>
+              <h2> Please leave feedback </h2>
+            </Container>
+          </Section>
+        </main>
+      </>
     );
   }
 }
