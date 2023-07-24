@@ -1,5 +1,11 @@
 import { Component } from 'react';
-import { Container, Section, CreateThemeSwitcher } from 'components';
+import PropTypes from 'prop-types';
+import {
+  Container,
+  Section,
+  CreateThemeSwitcher,
+  ButtonList,
+} from 'components';
 import typeFeedbacks from 'data/type_feedback.json';
 
 console.log(typeFeedbacks);
@@ -8,12 +14,14 @@ typeFeedbacks.map(({ name, value }) => (shape[name] = value));
 console.log('shape: ', shape);
 
 export class App extends Component {
+  static propTypes = { isNightTheme: PropTypes.bool.isRequired };
+
   state = {
     ...shape,
     // good: 0,
     // neutral: 0,
     // bad: 0,
-    isNightTheme: false,
+    isNightTheme: this.props.isNightTheme,
   };
 
   handleToggleTheme = () => {
@@ -36,7 +44,10 @@ export class App extends Component {
         <main>
           <Section>
             <Container>
-              <h2> Please leave feedback </h2>
+              <ButtonList
+                title="Please leave feedback"
+                typeFeedbacks={typeFeedbacks}
+              />
             </Container>
           </Section>
         </main>

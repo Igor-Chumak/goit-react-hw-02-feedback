@@ -26,5 +26,3 @@ export class CreateThemeSwitcher extends Component {
     );
   }
 }
-
-// export default CreateThemeSwitcher;
