@@ -1,38 +1,30 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 // import { nanoid } from 'nanoid';
-import { Title, ButtonBox, Button } from './ButtonList.styled';
+import { Title, StatisticsBox, StatisticItem } from './Statistics.styled';
 
-export class ButtonList extends Component {
+export class Statistics extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    typeFeedbacks: PropTypes.arrayOf(
-      PropTypes.shape({
-        nameId: PropTypes.string.isRequired,
-        button: PropTypes.string.isRequired,
-        btnColor: PropTypes.string.isRequired,
-      })
-    ).isRequired,
+    state: PropTypes.object.isRequired,
   };
 
   render() {
     return (
       <div>
         <Title>{this.props.title}</Title>
-        <ButtonBox>
-          {this.props.typeFeedbacks.map(
-            ({ nameId, button, btnColor, btnBgColor }) => (
-              <Button
-                type="button"
-                name={nameId}
-                style={{ color: btnColor, backgroundColor: btnBgColor }}
-                key={nameId}
-              >
-                {button}
-              </Button>
-            )
-          )}
-        </ButtonBox>
+        <StatisticsBox>
+          <StatisticItem>
+            {/* {this.props.state.map(({ nameId, button, btnColor, btnBgColor }) => (
+            <StatisticItem
+              style={{ color: btnColor, backgroundColor: btnBgColor }}
+              key={nameId}
+            >
+              {button}
+            </StatisticItem>
+          ))} */}
+          </StatisticItem>
+        </StatisticsBox>
       </div>
     );
   }

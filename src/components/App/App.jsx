@@ -5,6 +5,7 @@ import {
   Section,
   CreateThemeSwitcher,
   ButtonList,
+  Statistics,
 } from 'components';
 import typeFeedbacks from 'data/type_feedback.json';
 
@@ -48,6 +49,11 @@ export class App extends Component {
                 title="Please leave feedback"
                 typeFeedbacks={typeFeedbacks}
               />
+            </Container>
+          </Section>
+          <Section>
+            <Container>
+              <Statistics title="Statistics" state={this.state} />
             </Container>
           </Section>
         </main>

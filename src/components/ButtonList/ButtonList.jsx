@@ -9,7 +9,7 @@ export class ButtonList extends Component {
     typeFeedbacks: PropTypes.arrayOf(
       PropTypes.shape({
         nameId: PropTypes.string.isRequired,
-        button: PropTypes.string.isRequired,
+        buttonName: PropTypes.string.isRequired,
         btnColor: PropTypes.string.isRequired,
       })
     ).isRequired,
@@ -21,14 +21,14 @@ export class ButtonList extends Component {
         <Title>{this.props.title}</Title>
         <ButtonBox>
           {this.props.typeFeedbacks.map(
-            ({ nameId, button, btnColor, btnBgColor }) => (
+            ({ nameId, buttonName, btnColor, btnBgColor }) => (
               <Button
                 type="button"
                 name={nameId}
                 style={{ color: btnColor, backgroundColor: btnBgColor }}
                 key={nameId}
               >
-                {button}
+                {buttonName}
               </Button>
             )
           )}

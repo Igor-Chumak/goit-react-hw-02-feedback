@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import style from './CreateNoteSwitcher.module.css';
+import style from './CreateThemeSwitcher.module.css';
 
 export class CreateThemeSwitcher extends Component {
   static propTypes = {
