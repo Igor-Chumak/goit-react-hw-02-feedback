@@ -23,3 +23,13 @@ export const theme = Object.freeze({
     cubicBezier: '0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98)',
   },
 });
+
+export const darkTheme = {
+  body: ['linear-gradient(to bottom, #262626,  #e2e2e2)'],
+  textColor: '#fff',
+};
+
+export const lightTheme = {
+  body: ['linear-gradient(to bottom, #c9d6ff,  #e2e2e2)'],
+  textColor: '#000',
+};

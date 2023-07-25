@@ -1,5 +1,7 @@
 import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
+// import PropTypes from 'prop-types';
+
 import {
   Container,
   Section,
@@ -8,37 +10,44 @@ import {
   Statistics,
 } from 'components';
 import typeFeedbacks from 'data/type_feedback.json';
+import { GlobalStyles, darkTheme, lightTheme, theme } from 'styles';
 
 // console.log(typeFeedbacks);
 const stateDefault = {};
 typeFeedbacks.map(({ nameId, value }) => (stateDefault[nameId] = value));
-// console.log('shape: ', shape);
+// console.log('stateDefault: ', stateDefault);
 
 export class App extends Component {
-  static propTypes = { isNightTheme: PropTypes.bool.isRequired };
-
   state = {
     ...stateDefault,
     // good: 0,
     // neutral: 0,
     // bad: 0,
-    isNightTheme: this.props.isNightTheme,
+    modeTheme: 'light',
   };
 
   handleToggleTheme = () => {
     this.setState(prevState => {
-      return { isNightTheme: !prevState.isNightTheme };
+      return {
+        modeTheme: prevState.modeTheme === 'light' ? 'dark' : 'light',
+      };
     });
   };
 
   render() {
     return (
-      <>
+      <ThemeProvider
+        theme={{
+          ...theme,
+          ...(this.state.modeTheme === 'light' ? lightTheme : darkTheme),
+        }}
+      >
+        <GlobalStyles />
         <header>
           <Container>
             <CreateThemeSwitcher
               handleToggleTheme={this.handleToggleTheme}
-              isNightTheme={this.state.isNightTheme}
+              modeTheme={this.state.modeTheme === 'light' ? false : true}
             />
           </Container>
         </header>
@@ -57,7 +66,7 @@ export class App extends Component {
             </Container>
           </Section>
         </main>
-      </>
+      </ThemeProvider>
     );
   }
 }

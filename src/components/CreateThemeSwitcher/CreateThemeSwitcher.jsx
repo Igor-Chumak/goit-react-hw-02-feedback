@@ -6,7 +6,7 @@ import style from './CreateThemeSwitcher.module.css';
 export class CreateThemeSwitcher extends Component {
   static propTypes = {
     handleToggleTheme: PropTypes.func.isRequired,
-    isNightTheme: PropTypes.bool.isRequired,
+    modeTheme: PropTypes.bool.isRequired,
   };
 
   render() {
@@ -17,7 +17,7 @@ export class CreateThemeSwitcher extends Component {
           <input
             type="checkbox"
             onChange={this.props.handleToggleTheme}
-            checked={!this.props.isNightTheme}
+            checked={!this.props.modeTheme}
           />
           <span className={style.slider}></span>
         </label>

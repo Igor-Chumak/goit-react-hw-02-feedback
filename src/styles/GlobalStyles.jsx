@@ -12,10 +12,16 @@ export const GlobalStyles = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
-    background: ${theme.colors.mainBackground};
+    /* background: ${theme.colors.mainBackground}; */
     min-height: 100vh;
 
     font-style: normal;
+  }
+
+  body {
+    background: ${props => props.theme.body};
+    color: ${props => props.theme.textColor};
+    transition: .5s ease;
   }
 
   h1,
