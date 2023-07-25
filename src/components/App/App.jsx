@@ -9,15 +9,15 @@ import {
 import typeFeedbacks from 'data/type_feedback.json';
 
 // console.log(typeFeedbacks);
-const shape = {};
-typeFeedbacks.map(({ nameId, value }) => (shape[nameId] = value));
+const stateDefault = {};
+typeFeedbacks.map(({ nameId, value }) => (stateDefault[nameId] = value));
 // console.log('shape: ', shape);
 
 export class App extends Component {
   static propTypes = { isNightTheme: PropTypes.bool.isRequired };
 
   state = {
-    ...shape,
+    ...stateDefault,
     // good: 0,
     // neutral: 0,
     // bad: 0,
