@@ -8,10 +8,8 @@
 .switch {
     position: relative;
     display: inline-block;
-    /* width: 40px;
-    height: 20px; */
-    width: 60px;
-    height: 34px;
+    width: 40px;
+    height: 25px;
 }
 
 /* Hide default HTML checkbox */
@@ -32,31 +30,26 @@
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-    /* border-radius: 20px; */
-    border-radius: 34px;
+    border-radius: 25px;
+    z-index: 1;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    /* height: 16px;
-    width: 16px; */
-    height: 40px;
-    width: 40px;
-    /* left: 4px;
-    bottom: 2px; */
+    height: 30px;
+    width: 30px;
     left: 0px;
-    bottom: 4px;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    /* background-color: white; */
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
-    background-repeat: no-repeat;
-    background-position: center;
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
+    box-shadow: 0 0px 15px #2020203d;
+    background: rgb(250, 242, 242) url('https://i.ibb.co/FxzBYR9/night.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 input:checked+.slider {
@@ -68,20 +61,10 @@ input:focus+.slider {
 }
 
 input:checked+.slider:before {
-    /* -webkit-transform: translateX(16px);
-    -ms-transform: translateX(16px);
-    transform: translateX(16px); */
-    -webkit-transform: translateX(24px);
-    -ms-transform: translateX(24px);
-    transform: translateX(24px);
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
     background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
     background-repeat: no-repeat;
     background-position: center;
 }
-
-/* .themeName {
-    margin-right: 4px;
-    margin-left: 4px;
-    font-size: 12px;
-    color: inherit;
-} */
