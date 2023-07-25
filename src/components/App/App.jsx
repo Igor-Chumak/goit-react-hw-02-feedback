@@ -8,10 +8,10 @@ import {
 } from 'components';
 import typeFeedbacks from 'data/type_feedback.json';
 
-console.log(typeFeedbacks);
+// console.log(typeFeedbacks);
 const shape = {};
-typeFeedbacks.map(({ name, value }) => (shape[name] = value));
-console.log('shape: ', shape);
+typeFeedbacks.map(({ nameId, value }) => (shape[nameId] = value));
+// console.log('shape: ', shape);
 
 export class App extends Component {
   static propTypes = { isNightTheme: PropTypes.bool.isRequired };

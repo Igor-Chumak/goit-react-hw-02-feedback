@@ -1,8 +1,8 @@
 export * from 'components/App/App';
 export * from 'components/Section/Section.styled.jsx';
 export * from 'components/Container/Container.styled.jsx';
-export * from 'components/ButtonItem/ButtonItem';
-export * from 'components/ButtonItem/ButtonItem.styled.jsx';
+// export * from 'components/ButtonItem/ButtonItem';
+// export * from 'components/ButtonItem/ButtonItem.styled.jsx';
 export * from 'components/ButtonList/ButtonList';
 export * from 'components/ButtonList/ButtonList.styled.jsx';
 export * from 'components/Statistics/Statistics';

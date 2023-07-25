@@ -1,20 +1,23 @@
 [
   {
-    "name": "good",
+    "nameId": "good",
     "value": 1,
     "button": "Good",
-    "btnColor": "green"
+    "btnColor": "white",
+    "btnBgColor": "green"
   },
   {
-    "name": "neutral",
+    "nameId": "neutral",
     "value": 2,
     "button": "Neutral",
-    "btnColor": "yellow"
+    "btnColor": "black",
+    "btnBgColor": "yellow"
   },
   {
-    "name": "bad",
+    "nameId": "bad",
     "value": 3,
     "button": "Bad",
-    "btnColor": "red"
+    "btnColor": "white",
+    "btnBgColor": "red"
   }
 ]
