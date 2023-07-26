@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
+/* for change theme  */
   body {
     background: ${props => props.theme.body};
     color: ${props => props.theme.textColor};

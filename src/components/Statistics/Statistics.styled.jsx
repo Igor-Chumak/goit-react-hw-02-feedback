@@ -21,3 +21,12 @@ export const StatisticItem = styled.div`
   font-size: 20px;
   text-transform: capitalize;
 `;
+
+export const StatisticItemTotal = styled(StatisticItem)`
+  font-weight: bold;
+  color: ${props => props.theme.colors.accent};
+`;
+
+export const StatisticItemPositive = styled(StatisticItem)`
+  color: green;
+`;

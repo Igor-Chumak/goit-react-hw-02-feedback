@@ -62,7 +62,12 @@ export class App extends Component {
           </Section>
           <Section>
             <Container>
-              <Statistics title="Statistics" state={this.state} />
+              <Statistics
+                title="Statistics"
+                state={this.state}
+                total={200}
+                positiv={100}
+              />
             </Container>
           </Section>
         </main>
