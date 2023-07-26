@@ -17,7 +17,7 @@ export class Statistics extends Component {
         <StatisticsBox>
           {Object.keys(state).map(
             stateKey =>
-              stateKey !== 'modeTheme' && (
+              typeof state[stateKey] === 'number' && (
                 <StatisticItem key={stateKey}>
                   {stateKey} : {state[stateKey]}
                 </StatisticItem>
