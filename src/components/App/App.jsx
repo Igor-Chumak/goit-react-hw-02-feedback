@@ -78,7 +78,7 @@ export class App extends Component {
                 title="Statistics"
                 state={this.state}
                 total={this.countTotalFeedback()}
-                positive={this.countPositiveFeedbackPercentage()}
+                positivePercentage={this.countPositiveFeedbackPercentage()}
               />
             </Container>
           </Section>

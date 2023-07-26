@@ -14,11 +14,11 @@ export class Statistics extends Component {
     title: PropTypes.string.isRequired,
     state: PropTypes.object.isRequired,
     total: PropTypes.number.isRequired,
-    positive: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.number.isRequired,
   };
 
   render() {
-    const { state, title, total, positive } = this.props;
+    const { state, title, total, positivePercentage } = this.props;
     return (
       <>
         <Title>{title}</Title>
@@ -33,7 +33,7 @@ export class Statistics extends Component {
           )}
           <StatisticItemTotal>Total : {total}</StatisticItemTotal>
           <StatisticItemPositive>
-            Positive feedback : {positive} %
+            Positive feedback : {positivePercentage} %
           </StatisticItemPositive>
         </StatisticsBox>
       </>
