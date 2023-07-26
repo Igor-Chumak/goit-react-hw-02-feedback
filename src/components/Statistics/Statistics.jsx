@@ -11,20 +11,20 @@ export class Statistics extends Component {
 
   render() {
     const { state, title } = this.props;
-    console.log('state: ', state);
     return (
       <>
         <Title>{title}</Title>
         <StatisticsBox>
-          {Object.keys(state).map(stateId => (
-            <StatisticItem key={stateId}>
-              {stateId} : {state[stateId]}
-            </StatisticItem>
-          ))}
+          {Object.keys(state).map(
+            stateKey =>
+              stateKey !== 'modeTheme' && (
+                <StatisticItem key={stateKey}>
+                  {stateKey} : {state[stateKey]}
+                </StatisticItem>
+              )
+          )}
         </StatisticsBox>
       </>
     );
   }
 }
-
-// if (typeOf state[i] === 'number')
