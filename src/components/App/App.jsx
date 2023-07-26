@@ -20,10 +20,13 @@ typeFeedbacks.map(({ nameId, value }) => (stateDefault[nameId] = value));
 export class App extends Component {
   state = {
     ...stateDefault,
-    // good: 0,
-    // neutral: 0,
-    // bad: 0,
     modeTheme: 'light',
+  };
+
+  countTotalFeedbacks = () => {
+    let total = 11;
+    Object.keys(this.state).map(stateKey => console.log(stateKey));
+    return total;
   };
 
   handleToggleTheme = () => {
@@ -65,7 +68,7 @@ export class App extends Component {
               <Statistics
                 title="Statistics"
                 state={this.state}
-                total={200}
+                total={this.countTotalFeedbacks()}
                 positiv={100}
               />
             </Container>

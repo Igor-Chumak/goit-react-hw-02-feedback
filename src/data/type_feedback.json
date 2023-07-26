@@ -8,14 +8,14 @@
   },
   {
     "nameId": "neutral",
-    "value": 2,
+    "value": 4,
     "buttonName": "Neutral",
     "btnColor": "black",
     "btnBgColor": "yellow"
   },
   {
     "nameId": "bad",
-    "value": 3,
+    "value": 5,
     "buttonName": "Bad",
     "btnColor": "white",
     "btnBgColor": "red"
