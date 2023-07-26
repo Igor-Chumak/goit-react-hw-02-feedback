@@ -24,8 +24,13 @@ export class App extends Component {
   };
 
   countTotalFeedbacks = () => {
-    let total = 11;
-    Object.keys(this.state).map(stateKey => console.log(stateKey));
+    let total = 0;
+    Object.keys(this.state).map(stateKey => {
+      if (typeof this.state[stateKey] === 'number') {
+        total += this.state[stateKey];
+        return console.log(total);
+      }
+    });
     return total;
   };
 
