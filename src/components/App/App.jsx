@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-// import PropTypes from 'prop-types';
-
+import { GlobalStyles, darkTheme, lightTheme, theme } from 'styles';
 import {
   Header,
   Section,
@@ -10,7 +9,7 @@ import {
   Statistics,
 } from 'components';
 import typeFeedbacks from 'data/type_feedback.json';
-import { GlobalStyles, darkTheme, lightTheme, theme } from 'styles';
+// import typeFeedbacks from 'data/type_feedback_2.json';
 
 // console.log(typeFeedbacks);
 const stateDefault = {};
@@ -36,18 +35,17 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    return Object.keys(this.state).reduce(
-      (previousValue, element, index, array) => {
-        return typeof this.state[element] === 'number'
-          ? previousValue + this.state[element]
-          : previousValue;
-      },
-      0
-    );
+    return Object.keys(this.state).reduce((previousValue, element) => {
+      return typeof this.state[element] === 'number'
+        ? previousValue + this.state[element]
+        : previousValue;
+    }, 0);
   };
 
   countPositiveFeedbackPercentage = () => {
-    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+    return this.state.good > 0
+      ? Math.round((this.state.good / this.countTotalFeedback()) * 100)
+      : 0;
   };
 
   render() {
