@@ -34,16 +34,13 @@ export class App extends Component {
     );
   };
 
-  // countTotalFeedbacks = () => {
-  //   let total = 0;
-  //   Object.keys(this.state).map(stateKey => {
-  //     if (typeof this.state[stateKey] === 'number') {
-  //       total += this.state[stateKey];
-  //       console.log(total);
-  //     }
-  //   });
-  //   return total;
-  // };
+  countPositiveFeedbacks = () => {
+    return Object.keys(this.state).reduce((previousValue, element) => {
+      return typeof this.state[element] === 'number'
+        ? previousValue + this.state[element]
+        : previousValue;
+    }, 0);
+  };
 
   handleToggleTheme = () => {
     this.setState(prevState => {
@@ -85,7 +82,7 @@ export class App extends Component {
                 title="Statistics"
                 state={this.state}
                 total={this.countTotalFeedbacks()}
-                positiv={100}
+                positive={null}
               />
             </Container>
           </Section>
