@@ -31,6 +31,10 @@ export class App extends Component {
     });
   };
 
+  onLeaveFeedback = e => {
+    console.log(e.currentTarget.name);
+  };
+
   countTotalFeedback = () => {
     return Object.keys(this.state).reduce(
       (previousValue, element, index, array) => {
@@ -63,7 +67,10 @@ export class App extends Component {
         </Header>
         <main>
           <Section title="Please leave feedback">
-            <ButtonList typeFeedbacks={typeFeedbacks} />
+            <ButtonList
+              options={typeFeedbacks}
+              onLeaveFeedback={this.onLeaveFeedback}
+            />
           </Section>
           <Section title="Statistics">
             <Statistics
