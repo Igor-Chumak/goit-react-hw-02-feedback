@@ -24,15 +24,26 @@ export class App extends Component {
   };
 
   countTotalFeedbacks = () => {
-    let total = 0;
-    Object.keys(this.state).map(stateKey => {
-      if (typeof this.state[stateKey] === 'number') {
-        total += this.state[stateKey];
-        return console.log(total);
-      }
-    });
-    return total;
+    return Object.keys(this.state).reduce(
+      (previousValue, element, index, array) => {
+        return typeof this.state[element] === 'number'
+          ? previousValue + this.state[element]
+          : previousValue;
+      },
+      0
+    );
   };
+
+  // countTotalFeedbacks = () => {
+  //   let total = 0;
+  //   Object.keys(this.state).map(stateKey => {
+  //     if (typeof this.state[stateKey] === 'number') {
+  //       total += this.state[stateKey];
+  //       console.log(total);
+  //     }
+  //   });
+  //   return total;
+  // };
 
   handleToggleTheme = () => {
     this.setState(prevState => {

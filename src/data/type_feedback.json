@@ -1,7 +1,7 @@
 [
   {
     "nameId": "good",
-    "value": 1,
+    "value": 3,
     "buttonName": "Good",
     "btnColor": "white",
     "btnBgColor": "green"
