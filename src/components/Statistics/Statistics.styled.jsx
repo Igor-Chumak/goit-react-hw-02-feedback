@@ -9,8 +9,9 @@ export const Title = styled.h2`
 export const StatisticsBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: ${props => props.theme.spacing(7)};
+  justify-content: flex-start;
+  align-items: center;
+  gap: ${props => props.theme.spacing(5)};
 `;
 
 export const StatisticItem = styled.div`
@@ -18,5 +19,4 @@ export const StatisticItem = styled.div`
   font-weight: normal;
   font-size: 20px;
   text-transform: capitalize;
-  padding: 5px;
 `;

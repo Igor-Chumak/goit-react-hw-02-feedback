@@ -15,7 +15,7 @@ import { GlobalStyles, darkTheme, lightTheme, theme } from 'styles';
 // console.log(typeFeedbacks);
 const stateDefault = {};
 typeFeedbacks.map(({ nameId, value }) => (stateDefault[nameId] = value));
-// console.log('stateDefault: ', stateDefault);
+console.log('stateDefault: ', stateDefault);
 
 export class App extends Component {
   state = {

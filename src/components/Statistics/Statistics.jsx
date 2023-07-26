@@ -10,22 +10,21 @@ export class Statistics extends Component {
   };
 
   render() {
+    const { state, title } = this.props;
+    console.log('state: ', state);
     return (
-      <div>
-        <Title>{this.props.title}</Title>
+      <>
+        <Title>{title}</Title>
         <StatisticsBox>
-          <StatisticItem>
-            {/* {this.props.state.map(({ nameId, button, btnColor, btnBgColor }) => (
-            <StatisticItem
-              style={{ color: btnColor, backgroundColor: btnBgColor }}
-              key={nameId}
-            >
-              {button}
+          {Object.keys(state).map(stateId => (
+            <StatisticItem key={stateId}>
+              {stateId} : {state[stateId]}
             </StatisticItem>
-          ))} */}
-          </StatisticItem>
+          ))}
         </StatisticsBox>
-      </div>
+      </>
     );
   }
 }
+
+// if (typeOf state[i] === 'number')
