@@ -23,7 +23,7 @@ export class App extends Component {
     modeTheme: 'light',
   };
 
-  countTotalFeedbacks = () => {
+  countTotalFeedback = () => {
     return Object.keys(this.state).reduce(
       (previousValue, element, index, array) => {
         return typeof this.state[element] === 'number'
@@ -34,12 +34,8 @@ export class App extends Component {
     );
   };
 
-  countPositiveFeedbacks = () => {
-    return Object.keys(this.state).reduce((previousValue, element) => {
-      return typeof this.state[element] === 'number'
-        ? previousValue + this.state[element]
-        : previousValue;
-    }, 0);
+  countPositiveFeedbackPercentage = () => {
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   handleToggleTheme = () => {
@@ -81,8 +77,8 @@ export class App extends Component {
               <Statistics
                 title="Statistics"
                 state={this.state}
-                total={this.countTotalFeedbacks()}
-                positive={null}
+                total={this.countTotalFeedback()}
+                positive={this.countPositiveFeedbackPercentage()}
               />
             </Container>
           </Section>

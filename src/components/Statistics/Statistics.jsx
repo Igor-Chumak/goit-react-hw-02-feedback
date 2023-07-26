@@ -14,11 +14,11 @@ export class Statistics extends Component {
     title: PropTypes.string.isRequired,
     state: PropTypes.object.isRequired,
     total: PropTypes.number.isRequired,
-    positive: PropTypes.number,
+    positive: PropTypes.number.isRequired,
   };
 
   render() {
-    const { state, title, total, positive = 100 } = this.props;
+    const { state, title, total, positive } = this.props;
     return (
       <>
         <Title>{title}</Title>
