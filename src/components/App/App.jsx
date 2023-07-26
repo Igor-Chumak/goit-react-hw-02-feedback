@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 // import PropTypes from 'prop-types';
 
 import {
-  Container,
+  Header,
   Section,
   CreateThemeSwitcher,
   ButtonList,
@@ -23,6 +23,14 @@ export class App extends Component {
     modeTheme: 'light',
   };
 
+  handleToggleTheme = () => {
+    this.setState(prevState => {
+      return {
+        modeTheme: prevState.modeTheme === 'light' ? 'dark' : 'light',
+      };
+    });
+  };
+
   countTotalFeedback = () => {
     return Object.keys(this.state).reduce(
       (previousValue, element, index, array) => {
@@ -38,14 +46,6 @@ export class App extends Component {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
-  handleToggleTheme = () => {
-    this.setState(prevState => {
-      return {
-        modeTheme: prevState.modeTheme === 'light' ? 'dark' : 'light',
-      };
-    });
-  };
-
   render() {
     return (
       <ThemeProvider
@@ -55,32 +55,22 @@ export class App extends Component {
         }}
       >
         <GlobalStyles />
-        <header>
-          <Container>
-            <CreateThemeSwitcher
-              handleToggleTheme={this.handleToggleTheme}
-              modeTheme={this.state.modeTheme === 'light' ? false : true}
-            />
-          </Container>
-        </header>
+        <Header>
+          <CreateThemeSwitcher
+            handleToggleTheme={this.handleToggleTheme}
+            modeTheme={this.state.modeTheme === 'light' ? false : true}
+          />
+        </Header>
         <main>
-          <Section>
-            <Container>
-              <ButtonList
-                title="Please leave feedback"
-                typeFeedbacks={typeFeedbacks}
-              />
-            </Container>
+          <Section title="Please leave feedback">
+            <ButtonList typeFeedbacks={typeFeedbacks} />
           </Section>
-          <Section>
-            <Container>
-              <Statistics
-                title="Statistics"
-                state={this.state}
-                total={this.countTotalFeedback()}
-                positivePercentage={this.countPositiveFeedbackPercentage()}
-              />
-            </Container>
+          <Section title="Statistics">
+            <Statistics
+              state={this.state}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
           </Section>
         </main>
       </ThemeProvider>

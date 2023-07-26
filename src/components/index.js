@@ -1,7 +1,9 @@
 export * from 'components/App/App';
+export * from 'components/Header/Header';
 export * from 'components/CreateThemeSwitcher/CreateThemeSwitcher';
-export * from 'components/Section/Section.styled.jsx';
-export * from 'components/Container/Container.styled.jsx';
+export * from 'components/Section/Section';
+// export * from 'components/Section/Section.styled.jsx';
+export * from 'components/Container/Container.styled';
 export * from 'components/ButtonList/ButtonList';
 // export * from 'components/ButtonList/ButtonList.styled.jsx';
 // export * from 'components/ButtonItem/ButtonItem';
