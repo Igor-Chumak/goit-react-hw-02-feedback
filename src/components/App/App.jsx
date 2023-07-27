@@ -11,10 +11,8 @@ import {
 import typeFeedbacks from 'data/type_feedback.json';
 // import typeFeedbacks from 'data/type_feedback_2.json';
 
-// console.log(typeFeedbacks);
 const stateDefault = {};
 typeFeedbacks.map(({ nameId, value }) => (stateDefault[nameId] = value));
-// console.log('stateDefault: ', stateDefault);
 
 export class App extends Component {
   state = {
@@ -31,7 +29,10 @@ export class App extends Component {
   };
 
   onLeaveFeedback = e => {
-    console.log(e.currentTarget.name);
+    let stateKey = e.currentTarget.name;
+    this.setState(prevState => {
+      return { [stateKey]: prevState[stateKey] + 1 };
+    });
   };
 
   countTotalFeedback = () => {
