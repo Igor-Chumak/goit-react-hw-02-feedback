@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Notification } from 'components';
 import {
   StatisticsBox,
   StatisticItem,
@@ -17,20 +18,26 @@ export class Statistics extends Component {
   render() {
     const { state, total, positivePercentage } = this.props;
     return (
-      <StatisticsBox>
-        {Object.keys(state).map(
-          stateKey =>
-            typeof state[stateKey] === 'number' && (
-              <StatisticItem key={stateKey}>
-                {stateKey} : {state[stateKey]}
-              </StatisticItem>
-            )
+      <>
+        {total > 0 ? (
+          <StatisticsBox>
+            {Object.keys(state).map(
+              stateKey =>
+                typeof state[stateKey] === 'number' && (
+                  <StatisticItem key={stateKey}>
+                    {stateKey} : {state[stateKey]}
+                  </StatisticItem>
+                )
+            )}
+            <StatisticItemTotal>Total : {total}</StatisticItemTotal>
+            <StatisticItemPositive>
+              Positive feedback : {positivePercentage} %
+            </StatisticItemPositive>
+          </StatisticsBox>
+        ) : (
+          <Notification message="There is no feedback" />
         )}
-        <StatisticItemTotal>Total : {total}</StatisticItemTotal>
-        <StatisticItemPositive>
-          Positive feedback : {positivePercentage} %
-        </StatisticItemPositive>
-      </StatisticsBox>
+      </>
     );
   }
 }
