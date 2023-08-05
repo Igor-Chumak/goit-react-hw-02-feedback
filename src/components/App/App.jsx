@@ -7,6 +7,7 @@ import {
   CreateThemeSwitcher,
   ButtonList,
   Statistics,
+  Notification,
 } from 'components';
 import typeFeedbacks from 'data/type_feedback.json';
 // import typeFeedbacks from 'data/type_feedback_2.json';
@@ -50,6 +51,7 @@ export class App extends Component {
   };
 
   render() {
+    let total = this.countTotalFeedback();
     return (
       <ThemeProvider
         theme={{
@@ -72,11 +74,15 @@ export class App extends Component {
             />
           </Section>
           <Section title="Statistics">
-            <Statistics
-              state={this.state}
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
-            />
+            {total > 0 ? (
+              <Statistics
+                state={this.state}
+                total={total}
+                positivePercentage={this.countPositiveFeedbackPercentage()}
+              />
+            ) : (
+              <Notification message="There is no feedback" />
+            )}
           </Section>
         </main>
       </ThemeProvider>
