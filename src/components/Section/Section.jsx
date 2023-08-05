@@ -1,23 +1,19 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'components';
 import { Title, SectionBox } from './Section.styled';
 
-export class Section extends Component {
-  static propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.element,
-  };
+export const Section = ({ title, children }) => {
+  return (
+    <SectionBox>
+      <Container>
+        <Title>{title}</Title>
+        {children}
+      </Container>
+    </SectionBox>
+  );
+};
 
-  render() {
-    const { title, children } = this.props;
-    return (
-      <SectionBox>
-        <Container>
-          <Title>{title}</Title>
-          {children}
-        </Container>
-      </SectionBox>
-    );
-  }
-}
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.element,
+};

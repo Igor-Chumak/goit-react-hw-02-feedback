@@ -1,21 +1,10 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { Message } from './Notification.styled';
 
-const Message = styled.div`
-  color: inherit;
-  font-weight: normal;
-  font-size: 20px;
-  text-transform: none;
-  text-align: center;
-`;
+export const Notification = ({ message }) => {
+  return <Message>{message}</Message>;
+};
 
-export class Notification extends Component {
-  static propTypes = {
-    message: PropTypes.string,
-  };
-
-  render() {
-    return <Message>{this.props.message}</Message>;
-  }
-}
+Notification.propTypes = {
+  message: PropTypes.string,
+};

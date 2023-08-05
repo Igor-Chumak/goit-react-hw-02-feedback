@@ -1,18 +1,14 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'components';
 
-export class Header extends Component {
-  static propTypes = {
-    children: PropTypes.element,
-  };
+export const Header = ({ children }) => {
+  return (
+    <header>
+      <Container>{children}</Container>
+    </header>
+  );
+};
 
-  render() {
-    const { children } = this.props;
-    return (
-      <header>
-        <Container>{children}</Container>
-      </header>
-    );
-  }
-}
+Header.propTypes = {
+  children: PropTypes.element,
+};
